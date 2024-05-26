@@ -59,6 +59,8 @@ sed -i "s/chrome/moz/g" "${DIST_MODULE}/${CSS_BUNDLE_FILE}"
 echo "Packing zip for firefox complete!"
 rm -rf "${DIST_MODULE}"
 
+unzip -l "../ogi-firefox.zip"
+
 
 DIST_MODULE="./dist/chrome"
 echo '------------------------------------------------------------'
@@ -78,6 +80,7 @@ cleancss "${DIST_MODULE}/${CSS_BUNDLE_FILE}"
 (cd "${DIST_MODULE}" && \
   zip -qr -X "../ogi-chrome.zip" .)
 echo "Packing zip for chrome complete!"
+unzip -l "../ogi-chrome.zip"
 
 sed -i '31d' "${DIST_MODULE}/${MANIFEST_FILE_NAME}" ##- What is this line for?
 (cd "${DIST_MODULE}" && \
